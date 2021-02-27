@@ -24,10 +24,14 @@
       <li>acsbap.com</li>
       <li>acsbapp.com</li>
     </ul>
-    At a minimum, blocking these domains on your device of choice (or preferably your local network) will be sufficient. You may also wish to block the IP address altogether, though this may change from time to time. At the time of writing, the address is 167.172.136.187. If in doubt, perform an nslookup on either domain to gather the current IP address.
+    At a minimum, blocking these domains on your device of choice (or preferably your local network) will be sufficient. You may also wish to block the IP address altogether, though this may change from time to time. At the time of writing, the address is 167.172.136.187. If in doubt, perform a ping on either domain to gather the current IP address.
     </p>
 
     <h2>How to Block the AccessiBe Domains</h2>
+    <h3>Using an Ad Blocker</h3>
+    A couple of enterprising persons have also taken it upon themselves to create custom AccessiBe block rules that run directly in your browser. For users of AdBlock Plus, Derek Riemer has created <a href="https://files.derekriemer.com/evilA11yNasties.txt">this filter</a>. Users of Apple devices are encouraged to install <a href="https://better.fyi/">Better</a> which already blacklists AccessiBe and many other bad actors.
+    <p>
+
     <h3>Windows Instructions</h3>
     <p>
     The below instructions demonstrate how to block the current AccessiBe overlay distribution IP address via the Windows Firewall. If you are comfortable editing the system hosts file (located in C:\Windows\System32\Drivers\etc), then by all means do so.
@@ -46,7 +50,7 @@
       <li>Finally, give the rule a name, and click Finish.</li>
       <li>Close the Windows Firewall.</li>
     </ol>
-
+    <p>
     <h3>Mac OS and Linux Instructions</h3>
     This procedure describes how to edit the hosts file on a Mac to block the AccessiBe domain names. The following steps will also apply to any modern UNIX or Linux like operating system (including some routers and single-board computers such as the Raspberry Pi). If you are using Linux, open a terminal or console window and follow the instructions for editing the hosts file only.
     <p>
@@ -62,22 +66,17 @@
       <li>If all looks good, press Ctrl + X to exit nano. You will be asked if you wish to save your changes. Press Y followed by Return.</li>
       <li>At this point you are finished and can press Command + Q to quit the terminal application.</li>
     </ol>
-
-    <h3>Using an Ad Blocker</h3>
-    A couple of enterprising persons have also taken it upon themselves to create custom AccessiBe block rules that run directly in your browser. For users of AdBlock Plus, Derek Riemer has created <a href="https://files.derekriemer.com/evilA11yNasties.txt">this filter</a>. Users of Apple devices are encouraged to install <a href="https://better.fyi/">Better</a> which already blacklists AccessiBe and many other bad actors.
-<p>
-
+    <p>
     <h2>Check Your Setup</h2>
     <p>
     Due to browser security, this page cannot accurately test whether AccessiBe has been successfully blocked. Therefore, the most reliable way to find out is to visit a page which embeds the overlay. A few examples include <a href="https://www.namecheap.com">Name Cheap</a>, <a href="https://www.hamradio.com">Ham Radio Outlet</a>, and <a href="https://www.shopify.com">Shopify</a>.
     <p>
     If you do not hear any prompt to press a command for screen reader mode, and more importantly if no such items appear on the above pages after a few seconds, then congratulations! You have taken back control of the web.
     <p>
-
     <h2>Is That All?</h2>
     <p>
     Unfortunately, no. While AccessiBe is the worst offender today, other companies are engaging in similar deceitful practices. Over time instructions for blocking them will be integrated into this page.
     <p>
-    Please pass these instructions on to anyone else who would benefit. The web belongs to all of us. Let's reclaim it.
+    Please pass these instructions on to anyone else who would benefit. The web belongs to all of us. Let's reclaim it. Thanks for reading.
   </body>
 </html>

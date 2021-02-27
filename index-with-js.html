@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <script src="./ping.js"></script>
+    <script>
+      var loadURL = function(url, el) {
+        var img = new Image();
+        img.onload = function() { el.innerText = 'Not Blocked'; };
+        img.onerror = function() { el.innerText = 'Blocked'; };
+        img.src = url + '?random-no-cache=' + Math.floor((1 + Math.random()) * 0x10000).toString(16);
+      };
+
+      var testConnections = function() {
+        var addressMap = {
+          'https://acsbap.com': 'connection1',
+          'https://acsbapp.com': 'connection2',
+          'https://167.172.136.187': 'connection3'
+        };
+        for (var key in addressMap) {
+          if (!addressMap.hasOwnProperty(key)) continue;
+          var el = document.getElementById(addressMap[key]);
+          try {
+            loadURL(key, el);
+          } catch(e) {
+            el.innerText = 'Blocked';
+          }
+        }
+      };
+    </script>
+
+    <title>AccessiBe Gone</title>
+  </head>
+
+  <body>
+    <h1>AccessiBe Gone</h1>
+    <p>
+  If you are blind or low vision and rely on assistive technologies like screen readers, you may have begun finding popular websites becoming less usable-- all in the same ways:
+    <ul>
+      <li>Shortly after the page loads, you hear a prompt to either "Press ALT+1 to enable screen reader mode," or "to activate screen reader mode, click the first button of the website." This text repeats endlessly every ten seconds and interrupts anything you might be doing on the page.</li>
+      <li>Activating the screen reader mode introduces unexpected results, such as many nonsensical headings where there were none, oddly named forms, JavaScript code, or a single massive block of text which renders the entire site unusable.</li>
+    </ul>
+    <p>
+    If you have been scratching your head looking for the answer to this vexing plague, the answer is a piece of technology called an accessibility overlay-- rather, a piece of technology masquerading as an accessibility overlay. Most recently, a company known as AccessiBe has been selling and delivering software to thousands of websites, claiming that their one-line solution will make their sites accessible and save them from legal action. The claim is that artificial intelligence negates the need for any knowledge of accessible design patterns. Unfortunately, many businesses believe AccessiBe's claims and integrate the overlay with no thought to whether the technology actually delivers what it claims.
+    <p>
+    For more background on AccessiBe and their current hostile stance towards the disabled, you are encouraged to read <a href="https://adrianroselli.com/2020/06/accessibe-will-get-you-sued.html">this thorough post by Adrian Roselli</a>. Rather than repeat what has already been documented elsewhere, this page describes how to ban AccessiBe from ever reaching your computer and disrupting your online web experience. Note: the approaches below are exemplary. There are, as they say, many ways to skin a cat.
+    <p>
+
+    <h2>What to Block</h2>
+    <p>
+    The AccessiBe software is delivered from two domain hosts-- both of which point to the same IP address:
+    <ul>
+      <li>acsbap.com</li>
+      <li>acsbapp.com</li>
+    </ul>
+    At a minimum, blocking these domains on your device of choice (or preferably your local network) will be sufficient. You may also wish to block the IP address altogether, though this may change from time to time. At the time of writing, the address is 167.172.136.187. If in doubt, perform an nslookup on either domain to gather the current IP address.
+    </p>
+
+    <h2>How to Block the AccessiBe Domains</h2>
+    <h3>Windows Instructions</h3>
+    <p>
+    The below instructions demonstrate how to block the current AccessiBe overlay distribution IP address via the Windows Firewall. If you are comfortable editing the system hosts file (located in C:\Windows\System32\Drivers\etc), then by all means do so.
+<p>
+    <ol>
+      <li>In the Start Menu, type "firewall" and press Enter. The Windows Firewall application opens.</li>
+      <li>Click the "Advanced Options" link. Answer Yes to the User Account Control if it appears.</li>
+      <li>In the "Windows Defender Firewall with Advanced Security" screen, select the outbound rules treeview item, click the Action menu and select New Rule.</li>
+      <li>Select the custom rule option.</li>
+      <li>Choose to apply this rule to all programs.</li>
+      <li>Set the protocol type to any.</li>
+      <li>Select "These IP Addresses" and click Add.</li>
+      <li>In the IP addition screen, select "This IP or Subnet" and enter 167.172.136.187 for the IP address you wish to block, then click OK.</li>
+      <li>On the following screen, choose to block the connection.</li>
+      <li>Next, check the items where the rule should apply. The default is for the new filter to apply to the current domain, public, and private networks.</li>
+      <li>Finally, give the rule a name, and click Finish.</li>
+      <li>Close the Windows Firewall.</li>
+    </ol>
+
+    <h3>Mac OS and Linux Instructions</h3>
+    This procedure describes how to edit the hosts file on a Mac to block the AccessiBe domain names. The following steps will also apply to any modern UNIX or Linux like operating system (including some routers and single-board computers such as the Raspberry Pi). If you are using Linux, open a terminal or console window and follow the instructions for editing the hosts file only.
+    <p>
+    <ol>
+      <li>Press Command + Space to open the Spotlight Search. Type "terminal" and press Return.</li>
+      <li>When the terminal window opens, type "sudo nano /etc/hosts" followed by Return.</li>
+      <li>At this point you will be prompted for your administrative password. Type it and press Return.</li>
+      <li>The nano text editor opens. If you have never used nano before, <a href="https://wiki.gentoo.org/wiki/Nano/Basics_Guide">this guide</a> may be useful.</li>
+      <li>press the Down Arrow until you reach the line which reads "127.0.0.1 localhost". Press the Down Arrow once more and Return once or twice to add a blank line.</li>
+      <li>Enter the following exactly as shown: tip, you may copy the following line to the clipboard and paste it directly into the file</li>
+      127.0.0.1 acsbap.com acsbapp.com
+      <li>Review the change, ensuring there are spaces between the IP address and two domain names.</li>
+      <li>If all looks good, press Ctrl + X to exit nano. You will be asked if you wish to save your changes. Press Y followed by Return.</li>
+      <li>At this point you are finished and can press Command + Q to quit the terminal application.</li>
+    </ol>
+
+    <h3>Using an Ad Blocker</h3>
+    A couple of enterprising persons have also taken it upon themselves to create custom AccessiBe block rules that run directly in your browser. For users of AdBlock Plus, Derek Riemer has created <a href="https://files.derekriemer.com/evilA11yNasties.txt">this filter</a>. Users of Apple devices are encouraged to install <a href="https://better.fyi/">Better</a> which already blacklists AccessiBe and many other bad actors.
+<p>
+
+    <h2>Check Your Setup</h2>
+    Click the button below to find out if your browser is still able to communicate with the AccessiBe domains.
+    <p>
+    <button onclick='testConnections()'>Check Now</button>
+    <table>
+      <tr>
+        <th>acsbap.com</th>
+        <th>acsbapp.com</th>
+        <th>167.172.136.187</th>
+      </tr>
+      <tr>
+        <td id="connection1"></td>
+        <td id="connection2"></td>
+        <td id="connection3"></td>
+      </tr>
+    </table>
+    <p>
+    If one or more of the above results shows as blocked, then congratulations! You have just taken back control of your online activity. If this information helped you, please share it with a friend.
+  </body>
+</html>

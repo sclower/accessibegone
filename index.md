@@ -26,7 +26,7 @@ At a minimum, blocking these domains on your device of choice (or preferably you
 
 ### Using an Ad Blocker
 
-A couple of enterprising individuals have taken it upon themselves to create custom AccessiBe block rules that run directly in your browser. For users of [Ad Block Plus](https://www.adblockplus.org/), Derek Riemer has created [this filter](https://files.derekriemer.com/evilA11yNasties.txt). Users of Apple devices are encouraged to install [Better](https://better.fyi/) which already blacklists AccessiBe and many other bad actors.
+A couple of enterprising individuals have taken it upon themselves to create custom AccessiBe block rules that run directly in your browser. For users of [Ad Block Plus](https://www.adblockplus.org/) and [uBlock Origin](https://github.com/gorhill/uBlock), Derek Riemer has created [this filter](https://files.derekriemer.com/evilA11yNasties.txt). Users of Apple devices are encouraged to install [Better](https://better.fyi/) which already blacklists AccessiBe and many other bad actors.
 
 ### Windows Instructions
 

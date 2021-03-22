@@ -24,6 +24,10 @@ At a minimum, blocking these domains on your device of choice (or preferably you
 
 ## How to Block the AccessiBe Domains
 
+### Install the AccessiByeBye Extension
+
+The folks at [Pneuma Solutions](https://pneumasolutions.com/) (formerly Serotek), have taken the initial idea of blocking AccessiBe as outlined in this document and written a browser extension compatible with Chrome, Edge, and Firefox that blocks multiple overlay providers. If you use any of these browsers, then installing the [AccessiByeBye](https://www.accessibyebye.org/) extension will get rid of those overlays in no time. You can [find it in the Chrome Web Store](https://chrome.google.com/webstore/detail/accessibyebye/ikcamkknjfdplkdjjncobgmpciklohjg) or [check out the project on GitHub](https://github.com/PneumaSolutions/accessibyebye-extension).
+
 ### Using an Ad Blocker
 
 A couple of enterprising individuals have taken it upon themselves to create custom AccessiBe block rules that run directly in your browser. For users of [Ad Block Plus](https://www.adblockplus.org/) and [uBlock Origin](https://github.com/gorhill/uBlock), Derek Riemer has created [this filter](https://files.derekriemer.com/evilA11yNasties.txt). Users of Apple devices are encouraged to install [Better](https://better.fyi/) which already blacklists AccessiBe and many other bad actors.

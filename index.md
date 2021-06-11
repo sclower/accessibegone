@@ -15,12 +15,12 @@ Have you had enough of their intrusive overlay? Then keep reading. This document
 
 ## What to Block
 
-The AccessiBe software is delivered from two domain hosts-- both of which point to the same IP address:
+The AccessiBe software is delivered from two domain hosts:
 
 *   acsbap.com
 *   acsbapp.com
 
-At a minimum, blocking these domains on your device of choice (or preferably your local network) will be sufficient. You may also wish to block the IP address altogether, though this may change once in a while. At the time of writing, the address is 167.172.136.187\. If in doubt, perform a ping on either domain to obtain the correct IP address.
+At a minimum, blocking these domains on your device of choice (or preferably your local network) will be sufficient. You may also wish to block the IP addresses associated with each domain altogether, though they may change once in a while. At the time of writing, the addresses are 167.172.136.187 and 206.189.187.108\. If in doubt, perform a ping on either domain to obtain the correct IP address.
 
 ## How to Block the AccessiBe Domains
 
@@ -43,7 +43,7 @@ The below instructions demonstrate how to block the current AccessiBe overlay di
 1.  Choose to apply this rule to all programs.
 1.  Set the protocol type to any.
 1.  Select "These IP Addresses" and click Add.
-1.  In the IP addition screen, select "This IP or Subnet" and enter 167.172.136.187 for the IP address you wish to block, then click OK.
+1.  In the IP addition screen, select "This IP or Subnet" and enter 167.172.136.187 and 206.189.187.108 for the IP address you wish to block, then click OK.
 1.  On the following screen, choose to block the connection.
 1.  Next, check the items where the rule should apply. The default is for the new filter to apply to the current domain, public, and private networks.
 1.  Finally, give the rule a name, and click Finish.
